@@ -1,0 +1,32 @@
+ul {
+  list-style-type: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.checked {
+  text-decoration: line-through !important;
+  font-weight: 100 !important;
+  color: grey;
+}
+
+.notchecked{
+  text-decoration: none !important;
+  font-weight: 400 !important;
+  color: black;
+}
+
+.btn-padding-custom{
+  padding: 0 3% !important;
+}
+
+.taskText{
+  max-width:175px !important;
+  word-wrap:break-word !important;
+}
+

@@ -1,0 +1,58 @@
+<div class='TDL container my-auto'>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <br>
+      <h3> To Do List</h3>
+      <br>
+      <input type='text' id='taskinput' [(ngModel)]='addedTaskname' (click)="onClearInputBar()" class="form-control">
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-lg btn-outline-primary btn-padding-custom" (click)="onAddTask()">
+              <span style="font-size:smaller;"> Add Task </span> </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-lg btn-outline-warning btn-padding-custom"(click)="onClearText()">
+              <span style="font-size:smaller;"> Clear </span> </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-lg btn-outline-danger btn-padding-custom"(click)="onClearAll()">
+              <span style="font-size:smaller;"> Clear All </span> </button>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <ul>
+        <li *ngFor="let task_dict of taskList">
+          <div class="form-check">
+            <div class="row">
+              <div class="col-9" style="margin-right: 0 !important;">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="onAlterCheck(task_dict.id)">
+                <label class="form-check-label" for="flexCheckDefault">
+                <p class="taskText" [ngClass]="task_dict.checked==true?'checked':'not_checked'"> {{task_dict.name}}</p>
+                </label>
+              </div>
+              <div class="col-2">
+                <button class="btn btn-danger" (click)="onRemoveTask(task_dict.id)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg>
+                </button>
+              </div>
+              <br>
+              <br>
+            </div>
+          </div>
+          <!-- <input type="checkbox" (click)="onAlterCheck(task_dict.id)" >
+          {{task_dict.name}}
+          <button class="btn btn-danger" (click)="onRemoveTask(task_dict.id)"> remove </button>
+          <br>
+          <br> -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
